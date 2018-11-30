@@ -3,8 +3,7 @@ pipeline:
     image: jbergknoff/postgresql-client
     commands:
       - apk --update add wget
-      - chmod +x committees.sh
-      - ./committees.sh
+      - bash committees.sh
 
   # slack:
   #   image: plugins/slack
