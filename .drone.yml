@@ -20,14 +20,8 @@ pipeline:
   #     - apk --update add wget bash
   #     - bash pac_summaries.sh
 
-  # slack:
-  #   image: plugins/slack
-  #   secrets: [ slack_webhook ]
-  #   when:
-  #     status: [ success, failure ]
-  #   template: >
-  #     {{#success build.status}}
-  #       published https://private.publicintegrity.org/radiation-sari-graphic/
-  #     {{else}}
-  #       failed publishing https://private.publicintegrity.org/radiation-sari-graphic/
-  #     {{/success}}
+  slack:
+    image: plugins/slack
+    secrets: [ slack_webhook ]
+    when:
+      status: [ success, failure ]
