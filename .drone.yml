@@ -2,7 +2,7 @@ pipeline:
   load:
     image: jbergknoff/postgresql-client
     commands:
-      - apk --update add wget
+      - apk --update add wget bash
       - bash committees.sh
 
   # slack:
