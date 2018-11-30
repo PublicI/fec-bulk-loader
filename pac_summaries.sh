@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 psql -U politics -h db.fivetwentyseven.com politics -f pac_summaries.sql
 for cycle in 18 16 14 12 10 08 06 04 02 00; do #  98 96 94 92 90
     wget -N "https://www.fec.gov/files/bulk-downloads/20"$cycle"/webk"$cycle".zip"
