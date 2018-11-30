@@ -1,6 +1,7 @@
 pipeline:
   load:
     image: jbergknoff/postgresql-client
+    secrets: [ pgport, pgpassword, pguser, pgdatabase, pghost ]
     commands:
       - apk --update add wget bash
       - bash committees.sh
