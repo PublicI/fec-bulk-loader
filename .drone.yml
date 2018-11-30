@@ -1,0 +1,19 @@
+pipeline:
+  load:
+    image: jbergknoff/postgresql-client
+    commands:
+      - apk --update add wget
+      - chmod +x load.sh
+      - ./load.sh
+
+  # slack:
+  #   image: plugins/slack
+  #   secrets: [ slack_webhook ]
+  #   when:
+  #     status: [ success, failure ]
+  #   template: >
+  #     {{#success build.status}}
+  #       published https://private.publicintegrity.org/radiation-sari-graphic/
+  #     {{else}}
+  #       failed publishing https://private.publicintegrity.org/radiation-sari-graphic/
+  #     {{/success}}
