@@ -3,21 +3,21 @@ pipeline:
     image: publicintegrity/loader
     secrets: [ pgport, pgpassword, pguser, pgdatabase, pghost, cycles ]
     commands:
-      - cd /committees
+      - cd ./committees
       - bash load.sh
 
   load-candidates:
     image: publicintegrity/loader
     secrets: [ pgport, pgpassword, pguser, pgdatabase, pghost, cycles ]
     commands:
-      - cd /candidates
+      - cd ./candidates
       - bash load.sh
 
   load-pac-summaries:
     image: publicintegrity/loader
     secrets: [ pgport, pgpassword, pguser, pgdatabase, pghost, cycles ]
     commands:
-      - cd /pac_summaries
+      - cd ./pac_summaries
       - bash load.sh
 
   slack:
