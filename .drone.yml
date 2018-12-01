@@ -1,24 +1,21 @@
 pipeline:
   load-committees:
-    image: jbergknoff/postgresql-client
+    image: publicintegrity/loader
     secrets: [ pgport, pgpassword, pguser, pgdatabase, pghost ]
     commands:
-      - apk --update add wget bash
-      - bash committees.sh
+      - bash committees/load.sh
 
   load-candidates:
-    image: jbergknoff/postgresql-client
+    image: publicintegrity/loader
     secrets: [ pgport, pgpassword, pguser, pgdatabase, pghost ]
     commands:
-      - apk --update add wget bash
-      - bash candidates.sh
+      - bash candidates/load.sh
 
-  # load-pac-summaries:
-  #   image: jbergknoff/postgresql-client
-  #   secrets: [ pgport, pgpassword, pguser, pgdatabase, pghost ]
-  #   commands:
-  #     - apk --update add wget bash
-  #     - bash pac_summaries.sh
+  load-pac-summaries:
+    image: publicintegrity/loader
+    secrets: [ pgport, pgpassword, pguser, pgdatabase, pghost ]
+    commands:
+      - bash pac_summaries/load.sh
 
   slack:
     image: plugins/slack
