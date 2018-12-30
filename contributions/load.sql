@@ -1,4 +1,4 @@
-DELETE FROM fec_bulk_contributions;
+DROP TABLE fec_bulk_contributions;
 
 CREATE TABLE IF NOT EXISTS fec_bulk_contributions (
     cmte_id text,
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS fec_bulk_contributions (
     zip_code text,
     employer text,
     occupation text,
-    transaction_dt date,
+    transaction_dt text,
     transaction_amt decimal(12,2),
     other_id text,
     tran_id text,
