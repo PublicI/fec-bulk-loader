@@ -8,6 +8,6 @@ psql -f load.sql
 for cycle in $CYCLES; do
     wget -nv -N "https://www.fec.gov/files/bulk-downloads/20"$cycle"/indiv"$cycle".zip"
     unzip "indiv"$cycle".zip" "itcont.txt"
-    psql -c "\COPY fec_bulk_contributions FROM 'itcont.txt' WITH CSV DELIMITER '|' QUOTE E'\b';"
+    psql -c "\COPY fec_bulk_contributions FROM 'itcont.txt' WITH CSV DELIMITER '|' QUOTE E'\b' ENCODING 'LATIN1';"
     rm "itcont.txt"
 done
