@@ -20,6 +20,13 @@ pipeline:
       - cd ./pac_summaries
       - bash load.sh
 
+  load-contributions:
+    image: publicintegrity/loader
+    secrets: [ pgport, pgpassword, pguser, pgdatabase, pghost, cycles ]
+    commands:
+      - cd ./contributions
+      - bash load.sh
+
   slack:
     image: plugins/slack
     secrets: [ slack_webhook ]

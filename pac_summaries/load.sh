@@ -4,7 +4,7 @@ set -euo pipefail
 
 CYCLES="${CYCLES:-18 16 14 12 10 08 06 04 02 00}" #  98 96 94 92 90
 
-psql -U politics -h db.fivetwentyseven.com politics -f load.sql
+psql -f load.sql
 for cycle in $CYCLES; do
     wget -N "https://www.fec.gov/files/bulk-downloads/20"$cycle"/webk"$cycle".zip"
     unzip "webk"$cycle".zip"
