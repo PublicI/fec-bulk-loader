@@ -27,6 +27,13 @@ pipeline:
       - cd ./contributions
       - bash load.sh
 
+  load-expenditures:
+    image: publicintegrity/loader
+    secrets: [ pgport, pgpassword, pguser, pgdatabase, pghost, cycles ]
+    commands:
+      - cd ./expenditures
+      - bash load.sh
+
   slack:
     image: plugins/slack
     secrets: [ slack_webhook ]
