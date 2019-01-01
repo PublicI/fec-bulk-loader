@@ -23,6 +23,3 @@ CREATE TABLE IF NOT EXISTS fec_bulk_contributions (
     memo_text text,
     sub_id text
 );
-
-GRANT ALL ON TABLE fec_bulk_contributions TO redash_default;
-GRANT ALL ON TABLE fec_bulk_contributions TO politics;

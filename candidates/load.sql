@@ -16,7 +16,4 @@ CREATE TABLE IF NOT EXISTS fec_candidates (
     cand_zip text
 );
 
-GRANT ALL ON TABLE fec_candidates TO redash_default;
-GRANT ALL ON TABLE fec_candidates TO politics;
-
 \COPY fec_candidates FROM 'cn.txt' WITH CSV DELIMITER '|' QUOTE E'\b';

@@ -29,6 +29,3 @@ CREATE TABLE IF NOT EXISTS fec_bulk_pac_summaries (
     nonfed_share_exp decimal(14,2),
     cvg_end_dt date
 );
-
-GRANT ALL ON TABLE fec_bulk_pac_summaries TO redash_default;
-GRANT ALL ON TABLE fec_bulk_pac_summaries TO politics;

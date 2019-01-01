@@ -35,9 +35,6 @@ CREATE TABLE IF NOT EXISTS fec_committees (
    candidate_id text
 );
 
-GRANT ALL ON TABLE fec_committees TO redash_default;
-GRANT ALL ON TABLE fec_committees TO politics;
-
 \COPY fec_committees_temp FROM 'cm.txt' WITH CSV DELIMITER '|' QUOTE E'\b';
 
 
