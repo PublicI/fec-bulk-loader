@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-CYCLES="${CYCLES:-18 16 14 12 10 08 06 04 02 00}" #  98 96 94 92 90
+CYCLES="${CYCLES:-18 16 14 12 10 08 06 04}" # 02 00 98 96 94 92 90
 
 psql -f load.sql
 for cycle in $CYCLES; do
