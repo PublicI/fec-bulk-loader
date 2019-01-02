@@ -25,5 +25,6 @@ CREATE TABLE IF NOT EXISTS fec_bulk_expenditures (
     sub_id text,
     file_num text,
     tran_id text,
-    back_ref_tran_id text
+    back_ref_tran_id text,
+    unknown text
 );
