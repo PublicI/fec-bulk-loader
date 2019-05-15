@@ -1,5 +1,3 @@
-DELETE FROM fec_bulk_pac_summaries;
-
 CREATE TABLE IF NOT EXISTS fec_bulk_pac_summaries (
     cmte_id text,
     cmte_nm text,
@@ -29,3 +27,5 @@ CREATE TABLE IF NOT EXISTS fec_bulk_pac_summaries (
     nonfed_share_exp decimal(14,2),
     cvg_end_dt date
 );
+
+DELETE FROM fec_bulk_pac_summaries;

@@ -1,5 +1,3 @@
-DROP TABLE fec_bulk_contributions;
-
 CREATE TABLE IF NOT EXISTS fec_bulk_contributions (
     cmte_id text,
     amndt_ind text,
@@ -23,3 +21,5 @@ CREATE TABLE IF NOT EXISTS fec_bulk_contributions (
     memo_text text,
     sub_id text
 );
+
+DELETE FROM fec_bulk_contributions;

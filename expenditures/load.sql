@@ -1,5 +1,3 @@
-DROP TABLE fec_bulk_expenditures;
-
 CREATE TABLE IF NOT EXISTS fec_bulk_expenditures (
     cmte_id text,
     amndt_ind text,
@@ -28,3 +26,5 @@ CREATE TABLE IF NOT EXISTS fec_bulk_expenditures (
     back_ref_tran_id text,
     unknown text
 );
+
+DELETE FROM fec_bulk_expenditures;
